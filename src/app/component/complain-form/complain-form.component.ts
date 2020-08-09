@@ -46,7 +46,6 @@ export class ComplainFormComponent implements OnInit {
       address: new FormControl(""),
       productName: new FormControl(""),
       product: new FormControl(""),
-      itemId: new FormControl(""),
       modalNumber: new FormControl(""),
       serialNumber: new FormControl(""),
       description: new FormControl(""),
@@ -57,6 +56,10 @@ export class ComplainFormComponent implements OnInit {
 
   selectedItem(value) {
     console.log("Tesssssss", value);
+
+  }
+  submit(form) {
+    console.log("Forms", form.value);
 
   }
 }

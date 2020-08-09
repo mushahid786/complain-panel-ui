@@ -45,12 +45,12 @@
 
                 <div class="form-group col-sm-6">
                     <label for="productName">Select Product Name</label>
-                    <ngx-select [items]="productsName" formControlName="itemId" (onchange)="selectedItem($event)">
+                    <ngx-select [items]="productsName" formControlName="productName" (onchange)="selectedItem($event)">
                     </ngx-select>
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="product">Select Product</label>
-                    <ngx-select [items]="products" formControlName="itemId" (onchange)="selectedItem($event)">
+                    <ngx-select [items]="products" formControlName="product" (onchange)="selectedItem($event)">
                     </ngx-select>
                 </div>
 
@@ -84,7 +84,7 @@
 
             <div class="form-group col-sm-12 text-right">
 
-                <button type="submit" class="btn btn-primary w-100">Submit</button>
+                <button type="submit" class="btn btn-primary w-100" (click)="submit(myForm)">Submit</button>
             </div>
         </form>
     </div>
