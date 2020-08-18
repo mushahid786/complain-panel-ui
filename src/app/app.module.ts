@@ -10,6 +10,12 @@ import { BsDatepickerModule, DatepickerModule } from "ngx-bootstrap/datepicker";
 import { NgxSelectModule } from 'ngx-select-ex';
 import { ComplainFormComponent } from './component/complain-form/complain-form.component';
 
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+
+import * as firebase from "firebase/app";
+firebase.initializeApp(environment.fire);
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,9 +27,11 @@ import { ComplainFormComponent } from './component/complain-form/complain-form.c
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.fire),
     BsDatepickerModule.forRoot(),
     DatepickerModule.forRoot(),
-    NgxSelectModule
+    NgxSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

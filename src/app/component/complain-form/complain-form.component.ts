@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { ComplainService } from 'src/app/services/complain.service';
 
 @Component({
   selector: 'app-complain-form',
@@ -24,7 +25,7 @@ export class ComplainFormComponent implements OnInit {
     { id: "Cooler Problem" }
   ]
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, public projectService: ComplainService) { }
 
   myForm: FormGroup;
   bsConfigGlobal = {
@@ -58,8 +59,11 @@ export class ComplainFormComponent implements OnInit {
     console.log("Tesssssss", value);
 
   }
-  submit(form) {
-    console.log("Forms", form.value);
+  async submit(form) {
+
+    // new project is being created on save button
+    let docRef = await this.projectService.addProject(form.value);
+    console.log("Succesfully addded", docRef);
 
   }
 }
