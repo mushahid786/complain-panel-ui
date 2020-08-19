@@ -45,12 +45,12 @@
 
                 <div class="form-group col-sm-6">
                     <label for="productName">Select Product Name</label>
-                    <ngx-select [items]="productsName" formControlName="productName" (onchange)="selectedItem($event)">
+                    <ngx-select [items]="productsName" formControlName="productName">
                     </ngx-select>
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="product">Select Product</label>
-                    <ngx-select [items]="products" formControlName="product" (onchange)="selectedItem($event)">
+                    <ngx-select [items]="products" formControlName="product">
                     </ngx-select>
                 </div>
 

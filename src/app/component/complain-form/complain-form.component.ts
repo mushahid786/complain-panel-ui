@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { ComplainService } from 'src/app/services/complain.service';
+import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-complain-form',
@@ -25,7 +27,8 @@ export class ComplainFormComponent implements OnInit {
     { id: "Cooler Problem" }
   ]
 
-  constructor(private fb: FormBuilder, public projectService: ComplainService) { }
+  constructor(private fb: FormBuilder, public projectService: ComplainService,
+    public router: Router, public spinner: NgxSpinnerService) { }
 
   myForm: FormGroup;
   bsConfigGlobal = {
@@ -55,15 +58,22 @@ export class ComplainFormComponent implements OnInit {
     });
   }
 
-  selectedItem(value) {
-    console.log("Tesssssss", value);
+  selectedItem(event) {
+    console.log("Tesssssss", event);
 
   }
+
   async submit(form) {
 
-    // new project is being created on save button
-    let docRef = await this.projectService.addProject(form.value);
-    console.log("Succesfully addded", docRef);
+    this.spinner.show();
+    let docRef = await this.projectService.addProject(form.value).then(function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
 
+    })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+    this.spinner.hide()
+    this.router.navigate([`/success`]);
   }
 }

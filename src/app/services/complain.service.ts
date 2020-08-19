@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Complain } from '../model/complain';
+
 import {
   AngularFirestore,
   AngularFirestoreCollection
@@ -10,11 +11,15 @@ import {
 })
 export class ComplainService {
 
-  projectsCollection: AngularFirestoreCollection<Complain>;
+  complainCollection: AngularFirestoreCollection<Complain>;
 
-  constructor() { }
+  constructor(public firestore: AngularFirestore) {
+    this.complainCollection = this.firestore.collection(
+      "complainCollection"
+    );
+  }
 
   addProject(complain: Complain) {
-    return this.projectsCollection.add(complain);
+    return this.complainCollection.add(complain);
   }
 }
