@@ -12,7 +12,7 @@
             <div class="row m-0 p-0 mb-4 ">
                 <div class="form-group col-sm-6">
                     <label for="name">Name</label>
-                    <input type="name" placeholder="Enter name" formControlName="name" class="form-control">
+                    <input type="text" placeholder="Enter name" formControlName="name" class="form-control">
                     <span *ngIf="(myForm.value.name=='')" class="text-danger">Please enter name</span>
                 </div>
 
@@ -20,68 +20,92 @@
                     <label for="phoneNumber">Phone Number</label>
                     <input type="text" placeholder="Enter Phone Number" formControlName="phoneNumber"
                         class="form-control">
-                    <span *ngIf="(myForm.value.name=='')" class="text-danger">Please enter phone number</span>
+                    <span *ngIf="(myForm.value.phoneNumber=='')" class="text-danger">Please enter phone number</span>
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="email1">Email address</label>
                     <input type="email" placeholder="Enter email" formControlName="email" class="form-control">
+                    <span *ngIf="(myForm.value.email=='')" class="text-danger">Please enter a valid email</span>
+
                 </div>
 
                 <div class="form-group col-sm-6">
                     <label for="state">State</label>
                     <input type="text" placeholder="Enter state" formControlName="state" class="form-control">
+                    <span *ngIf="(myForm.value.state=='')" class="text-danger">Please enter state name</span>
+
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="district">District</label>
                     <input type="text" placeholder="Enter District" formControlName="district" class="form-control">
+                    <span *ngIf="(myForm.value.district=='')" class="text-danger">Please enter district name</span>
+
                 </div>
 
                 <div class="form-group col-sm-6">
                     <label for="pinCode">Pin Code</label>
                     <input type="number" placeholder="Enter Pin Code" formControlName="pinCode" class="form-control">
+                    <span *ngIf="(myForm.value.pinCode=='')" class="text-danger">Please enter pin code</span>
+
                 </div>
                 <div class="form-group col-sm-6">
-                    <label for="pinCode">Address</label>
+                    <label for="address">Address</label>
                     <input type="text" placeholder="Enter Address" formControlName="address" class="form-control">
+                    <span *ngIf="(myForm.value.address=='')" class="text-danger">Please enter address</span>
+
                 </div>
 
                 <div class="form-group col-sm-6">
                     <label for="productName">Select Product Name</label>
                     <ngx-select [items]="productsName" formControlName="productName">
                     </ngx-select>
+                    <span *ngIf="(myForm.value.productName=='')" class="text-danger">Please select product name</span>
+
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="product">Select Product</label>
                     <ngx-select [items]="products" formControlName="product">
                     </ngx-select>
+                    <span *ngIf="(myForm.value.product=='')" class="text-danger">Please select product</span>
+
                 </div>
 
                 <div class="form-group col-sm-6">
                     <label for="problem">Problem</label>
-                    <input type="text" placeholder="Enter Problem" formControlName="" class="form-control">
+                    <input type="text" placeholder="Enter Problem" formControlName="problem" class="form-control">
+                    <span *ngIf="(myForm.value.problem=='')" class="text-danger">Please enter product problem</span>
+
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="modalNumber">Modal Number</label>
                     <input type="text" placeholder="Enter Modal Number" formControlName="modalNumber"
                         class="form-control">
+                    <span *ngIf="(myForm.value.modalNumber=='')" class="text-danger">Please enter modal number</span>
+
                 </div>
 
                 <div class="form-group col-sm-6">
                     <label for="serialNumber">Serial Number</label>
                     <input type="text" placeholder="Enter Serial Number" formControlName="serialNumber"
                         class="form-control">
+                    <span *ngIf="(myForm.value.serialNumber=='')" class="text-danger">Please enter serial number</span>
+
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="description">Description</label>
                     <textarea rows="4" formControlName="description" class="form-control">
                     </textarea>
+                    <span *ngIf="(myForm.value.description=='')" class="text-danger">Please enter description</span>
+
                 </div>
 
                 <div class="form-group col-sm-6">
                     <label for="complainDate">Complain Date</label>
-                    <input type="text" [bsConfig]="bsConfigGlobal" bsDatepicker [minDate]="minDate" class="form-control"
-                        formControlName="complainDate" placeholder="Complain Date" />
+                    <input type="text" readonly [bsConfig]="bsConfigGlobal" bsDatepicker [minDate]="minDate"
+                        class="form-control" formControlName="complainDate" placeholder="Complain Date" />
+                    <span *ngIf="(myForm.value.complainDate=='')" class="text-danger">Please select complain date</span>
                 </div>
+
             </div>
 
             <div class="form-group col-sm-12 text-right">

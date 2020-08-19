@@ -49,6 +49,7 @@ export class ComplainFormComponent implements OnInit {
       pinCode: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
       productName: new FormControl('', Validators.required),
+      problem: new FormControl('', Validators.required),
       product: new FormControl('', Validators.required),
       modalNumber: new FormControl('', Validators.required),
       serialNumber: new FormControl('', Validators.required),
