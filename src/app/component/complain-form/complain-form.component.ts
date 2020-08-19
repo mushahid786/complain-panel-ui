@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ComplainService } from 'src/app/services/complain.service';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -41,19 +41,19 @@ export class ComplainFormComponent implements OnInit {
   ngOnInit(): void {
 
     this.myForm = this.fb.group({
-      name: new FormControl(""),
-      phoneNumber: new FormControl(""),
-      email: new FormControl(""),
-      state: new FormControl(""),
-      district: new FormControl(""),
-      pinCode: new FormControl(""),
-      address: new FormControl(""),
-      productName: new FormControl(""),
-      product: new FormControl(""),
-      modalNumber: new FormControl(""),
-      serialNumber: new FormControl(""),
-      description: new FormControl(""),
-      complainDate: new FormControl(""),
+      name: new FormControl('', Validators.required),
+      phoneNumber: new FormControl('', [Validators.required, Validators.minLength(10)]),
+      email: new FormControl('', Validators.required),
+      state: new FormControl('', Validators.required),
+      district: new FormControl('', Validators.required),
+      pinCode: new FormControl('', Validators.required),
+      address: new FormControl('', Validators.required),
+      productName: new FormControl('', Validators.required),
+      product: new FormControl('', Validators.required),
+      modalNumber: new FormControl('', Validators.required),
+      serialNumber: new FormControl('', Validators.required),
+      description: new FormControl('', Validators.required),
+      complainDate: new FormControl('', Validators.required),
 
     });
   }
@@ -65,6 +65,12 @@ export class ComplainFormComponent implements OnInit {
 
   async submit(form) {
 
+    // if (!(form.value.name) || !(form.value.phoneNumber) || !(form.value.email) || !(form.value.state) || !(form.value.district) || !(form.value.pinCode) || !(form.value.address) ||
+    //   !(form.value.productName) || !(form.value.product) || !(form.value.modalNumber) || !(form.value.serialNumber) || !(form.value.description) || !form.complainDate) {
+    //   console.log("Tested");
+
+    //   return true
+    // }
     this.spinner.show();
     let docRef = await this.projectService.addProject(form.value).then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
