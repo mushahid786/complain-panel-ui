@@ -12,6 +12,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class ComplainFormComponent implements OnInit {
 
 
+  isFieldFill: boolean = false;
   productsName = [
     { id: "LG" },
     { id: "Samsung" },
@@ -66,12 +67,12 @@ export class ComplainFormComponent implements OnInit {
 
   async submit(form) {
 
-    // if (!(form.value.name) || !(form.value.phoneNumber) || !(form.value.email) || !(form.value.state) || !(form.value.district) || !(form.value.pinCode) || !(form.value.address) ||
-    //   !(form.value.productName) || !(form.value.product) || !(form.value.modalNumber) || !(form.value.serialNumber) || !(form.value.description) || !form.complainDate) {
-    //   console.log("Tested");
-
-    //   return true
-    // }
+    if ((form.value.name == '') || (form.value.phoneNumber == '') || (form.value.email == '') || (form.value.state == '') || (form.value.district == '') || (form.value.pinCode == '') || (form.value.address == '') ||
+      (form.value.productName == '') || (form.value.product == '') || (form.value.modalNumber == '') || (form.value.serialNumber == '') || (form.value.description == '') || (form.value.complainDate == '')) {
+      console.log("Tested");
+      this.isFieldFill = true;
+      return
+    }
     this.spinner.show();
     let docRef = await this.projectService.addProject(form.value).then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
