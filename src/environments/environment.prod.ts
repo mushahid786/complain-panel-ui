@@ -1,13 +1,13 @@
 export const environment = {
   production: true,
   fire: {
-    apiKey: "AIzaSyBhryU_qSCgKRX3OTgoVaW5xGyPeo3aS_g",
-    authDomain: "e-commere-product.firebaseapp.com",
-    databaseURL: "https://e-commere-product.firebaseio.com",
-    projectId: "e-commere-product",
-    storageBucket: "e-commere-product.appspot.com",
-    messagingSenderId: "384324550722",
-    appId: "1:384324550722:web:cc13ab7827a04f280a2ddb",
-    measurementId: "G-GT3SZHTDFT"
+    apiKey: "AIzaSyAJW6CX9NrqFmT1rUoQW8eT7wV-lWyFMfs",
+    authDomain: "complain-panel-warsi-traders.firebaseapp.com",
+    databaseURL: "https://complain-panel-warsi-traders.firebaseio.com",
+    projectId: "complain-panel-warsi-traders",
+    storageBucket: "complain-panel-warsi-traders.appspot.com",
+    messagingSenderId: "989443364244",
+    appId: "1:989443364244:web:20e9d3e96b5ccdd2bfab81",
+    measurementId: "G-PXRVKFXHHB"
   }
 };

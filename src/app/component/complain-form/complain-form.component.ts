@@ -56,6 +56,7 @@ export class ComplainFormComponent implements OnInit {
       modalNumber: new FormControl('', Validators.required),
       serialNumber: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
+      purchaseDate: new FormControl('', Validators.required),
       complainDate: new FormControl(this.date),
       attachments: new FormArray([]),
 
@@ -98,8 +99,8 @@ export class ComplainFormComponent implements OnInit {
 
   async submit(form) {
 
-    if ((form.value.name == '') || (form.value.phoneNumber == '') || (form.value.email == '') || (form.value.state == '') || (form.value.district == '') || (form.value.pinCode == '') || (form.value.address == '') ||
-      (form.value.productName == '') || (form.value.product == '') || (form.value.modalNumber == '') || (form.value.serialNumber == '') || (form.value.description == '') || (form.value.complainDate == '')) {
+    if ((form.value.name == '') || (form.value.phoneNumber == '') || (form.value.state == '') || (form.value.district == '') || (form.value.pinCode == '') || (form.value.address == '') ||
+      (form.value.productName == '') || (form.value.product == '') || (form.value.modalNumber == '') || (form.value.description == '') || (form.value.purchaseDate == '')) {
       this.isFieldFill = true;
       return
     }
