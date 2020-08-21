@@ -1,0 +1,7 @@
+<div class="dropzone" dropzone (hovered)="toggleHover($event)" (dropped)="onDrop($event)" [class.hovering]="isHovering">
+    <input type="file" accept=".pdf" (change)="onSelect($event)" multiple
+        style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;" />
+</div>
+<div *ngFor="let file of files">
+    <upload-task [file]="file" (uploadedFile)="uploadedFileEvent($event)"></upload-task>
+</div>

@@ -1,133 +1,156 @@
 <div class="row p-0 m-0">
     <div class="blockquote-footer bs-datepicker bs-popover-bottom bs-popover-right col-md p-0">
-        <h2 class="text-left"><img src="assets/warsi_traders_logo.png" alt="Warsi Logo"
-                style="width: 50px;height: 60px; margin-top: -7px;">
-            WARSI TRADERS</h2>
+        <h2 class="text-left">
+            <img src="assets/warsi_traders_logo.png" alt="Warsi Logo"
+                style="width: 50px; height: 60px; margin-top: -7px;" />
+            WARSI TRADERS
+        </h2>
         <div class="col-12">
-
-            <h5 class="text-center">
+            <h5 class="text-center my-n2">
                 Complain Registration Form
             </h5>
         </div>
-        <hr>
+        <hr />
     </div>
 
-
     <div class="alert-warning bg-white border-top col-md-12 col-sm-6 py-5 text-black">
-
         <form [formGroup]="myForm">
-            <div class="row m-0 p-0 mb-4 ">
+            <div class="row m-0 p-0 mb-4">
                 <div class="form-group col-sm-6 py-1">
                     <label for="name">Name</label>
-                    <input type="text" placeholder="mame" formControlName="name" class="form-control">
-                    <span *ngIf="(myForm.value.name=='') && isFieldFill" class="text-danger">Please enter name</span>
+                    <input type="text" placeholder="mame" formControlName="name" class="form-control" />
+                    <span *ngIf="myForm.value.name == '' && isFieldFill" class="text-danger">Please enter name</span>
                 </div>
 
                 <div class="form-group col-sm-6 py-1">
                     <label for="phoneNumber">Phone Number</label>
-                    <input type="text" placeholder="phone number" formControlName="phoneNumber" class="form-control">
-                    <span *ngIf="(myForm.value.phoneNumber=='') && isFieldFill" class="text-danger">Please enter phone
+                    <input type="text" placeholder="phone number" formControlName="phoneNumber" class="form-control" />
+                    <span *ngIf="myForm.value.phoneNumber == '' && isFieldFill" class="text-danger">Please enter phone
                         number</span>
                 </div>
                 <div class="form-group col-sm-6 py-1">
                     <label for="email1">Email address</label>
-                    <input type="email" placeholder="email" formControlName="email" class="form-control">
-                    <span *ngIf="(myForm.value.email=='') && isFieldFill" class="text-danger">Please enter a valid
+                    <input type="email" placeholder="email" formControlName="email" class="form-control" />
+                    <span *ngIf="myForm.value.email == '' && isFieldFill" class="text-danger">Please enter a valid
                         email</span>
-
                 </div>
 
                 <div class="form-group col-sm-6 py-1">
                     <label for="state">State</label>
-                    <input type="text" placeholder="state" formControlName="state" class="form-control">
-                    <span *ngIf="(myForm.value.state=='') && isFieldFill" class="text-danger">Please enter state
+                    <input type="text" placeholder="state" formControlName="state" class="form-control" />
+                    <span *ngIf="myForm.value.state == '' && isFieldFill" class="text-danger">Please enter state
                         name</span>
-
                 </div>
                 <div class="form-group col-sm-6 py-1">
                     <label for="district">District</label>
-                    <input type="text" placeholder="district" formControlName="district" class="form-control">
-                    <span *ngIf="(myForm.value.district=='') && isFieldFill" class="text-danger">Please enter district
+                    <input type="text" placeholder="district" formControlName="district" class="form-control" />
+                    <span *ngIf="myForm.value.district == '' && isFieldFill" class="text-danger">Please enter district
                         name</span>
-
                 </div>
 
                 <div class="form-group col-sm-6 py-1">
                     <label for="pinCode">Pin Code</label>
-                    <input type="number" placeholder="pin code" formControlName="pinCode" class="form-control">
-                    <span *ngIf="(myForm.value.pinCode=='') && isFieldFill" class="text-danger">Please enter pin
+                    <input type="number" placeholder="pin code" formControlName="pinCode" class="form-control" />
+                    <span *ngIf="myForm.value.pinCode == '' && isFieldFill" class="text-danger">Please enter pin
                         code</span>
-
                 </div>
                 <div class="form-group col-sm-6 py-1">
                     <label for="address">Address</label>
-                    <input type="text" placeholder="address" formControlName="address" class="form-control">
-                    <span *ngIf="(myForm.value.address=='') && isFieldFill" class="text-danger">Please enter
+                    <input type="text" placeholder="address" formControlName="address" class="form-control" />
+                    <span *ngIf="myForm.value.address == '' && isFieldFill" class="text-danger">Please enter
                         address</span>
-
                 </div>
 
                 <div class="form-group col-sm-6 py-1">
                     <label for="productName">Select Product Name</label>
                     <ngx-select [items]="productsName" formControlName="productName">
                     </ngx-select>
-                    <span *ngIf="(myForm.value.productName=='') && isFieldFill" class="text-danger">Please select
+                    <span *ngIf="myForm.value.productName == '' && isFieldFill" class="text-danger">Please select
                         product name</span>
-
                 </div>
                 <div class="form-group col-sm-6 py-1">
                     <label for="product">Select Product</label>
                     <ngx-select [items]="products" formControlName="product">
                     </ngx-select>
-                    <span *ngIf="(myForm.value.product=='') && isFieldFill" class="text-danger">Please select
+                    <span *ngIf="myForm.value.product == '' && isFieldFill" class="text-danger">Please select
                         product</span>
-
                 </div>
 
                 <div class="form-group col-sm-6 py-1">
                     <label for="problem">Problem</label>
-                    <input type="text" placeholder="problem" formControlName="problem" class="form-control">
-                    <span *ngIf="(myForm.value.problem=='') && isFieldFill" class="text-danger">Please enter product
+                    <input type="text" placeholder="problem" formControlName="problem" class="form-control" />
+                    <span *ngIf="myForm.value.problem == '' && isFieldFill" class="text-danger">Please enter product
                         problem</span>
-
                 </div>
                 <div class="form-group col-sm-6 py-1">
                     <label for="modalNumber">Modal Number</label>
-                    <input type="text" placeholder="modal number" formControlName="modalNumber" class="form-control">
-                    <span *ngIf="(myForm.value.modalNumber=='') && isFieldFill" class="text-danger">Please enter modal
+                    <input type="text" placeholder="modal number" formControlName="modalNumber" class="form-control" />
+                    <span *ngIf="myForm.value.modalNumber == '' && isFieldFill" class="text-danger">Please enter modal
                         number</span>
-
                 </div>
 
                 <div class="form-group col-sm-6 py-1">
                     <label for="serialNumber">Serial Number</label>
-                    <input type="text" placeholder="serial number" formControlName="serialNumber" class="form-control">
-                    <span *ngIf="(myForm.value.serialNumber=='') && isFieldFill" class="text-danger">Please enter serial
+                    <input type="text" placeholder="serial number" formControlName="serialNumber"
+                        class="form-control" />
+                    <span *ngIf="myForm.value.serialNumber == '' && isFieldFill" class="text-danger">Please enter serial
                         number</span>
-
                 </div>
                 <div class="form-group col-sm-6 py-1">
                     <label for="description">Description</label>
                     <textarea rows="4" formControlName="description" class="form-control">
-                    </textarea>
-                    <span *ngIf="(myForm.value.description=='') && isFieldFill" class="text-danger">Please enter
-                        description</span>
-
+          </textarea>
+                    <span *ngIf="myForm.value.description == '' && isFieldFill" class="text-danger">Please enter
+                        description
+                    </span>
+                </div>
+                <div class="address doc_options p-3 w-100">
+                    <div class="col-sm-6 text-center border mb-2"
+                        *ngFor="let file of myForm.value.attachments; let index = index">
+                        <div class="mt-1 p-2 pdfClass">
+                            <i class="fa fa-close" style="color: red; float: right;" title="Remove Attachment"
+                                (click)="deleteAttachment(index)"></i>
+                            <a *ngIf="file.name.includes('pdf')" [href]="file.downloadURL" target="_blank" download>
+                                <i class="fa fa fa-file-pdf-o fa-3x" style="color: #48a5b5;" aria-hidden="true"></i>
+                            </a>
+                            <a *ngIf="!file.name.includes('pdf')" [href]="file.downloadURL" target="_blank" download>
+                                <img class="logo w-100" [src]="file.downloadURL" />
+                            </a>
+                            <p class="text-black">{{ file.name }}</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group col-sm-6 py-1">
-                    <label for="complainDate">Complain Date</label>
-                    <input type="text" readonly [bsConfig]="bsConfigGlobal" bsDatepicker [minDate]="minDate"
-                        class="form-control" formControlName="complainDate" placeholder="complain date" />
-                    <span *ngIf="(myForm.value.complainDate=='') && isFieldFill" class="text-danger">Please select
-                        complain date</span>
+                <div class="px-3 text-center uploader-wrapper w-50 col-12"
+                    [ngClass]="{ 'd-none': !myForm.value.attachments }" *ngIf="myForm.value.attachments.length == 0">
+                    <div class="upload_proofs_sec upload_only text-center px-4" style="padding: 0 0rem 0 3rem;">
+                        <div id="uploaded_doc" class="hide_div">
+                            <div class="doc">
+                                <span class="label_txt after">Bill Documents Uploaded</span>
+                                <div class="doc_div"></div>
+                            </div>
+                        </div>
+                        <div class="upload_sec">
+                            <div class="comments">
+                                <div class="left_comment">
+                                    <p class="upload_head title">Add documents</p>
+                                    <p class="upload_head bottom_note">
+                                        PDF File (pdf .pdfx) under 20 MB.
+                                    </p>
+                                </div>
+                            </div>
+                            <label for="file_upload" id="file_upload_lbl">
+                                <uploader [uploadType]="1" (uploadedFile)="uploadedEvent($event, 1)"></uploader>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-
             </div>
 
             <div class="form-group col-sm-12 text-right">
-
-                <button type="submit" class="btn btn-primary w-100" (click)="submit(myForm)">Submit</button>
+                <button type="submit" class="btn btn-primary w-100" (click)="submit(myForm)">
+                    Submit
+                </button>
             </div>
         </form>
     </div>
